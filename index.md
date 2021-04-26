@@ -53,13 +53,26 @@ Check DC curriculum
 Check SWC curriculum
 {% endcomment %}
 
-{% if site.carpentry == "swc" %}
-{% unless site.curriculum == "swc-inflammation" or site.curriculum == "swc-gapminder" %}
+{% if site.carpentry == "dc" %}
+{% unless site.curriculum == "dc-ecology" or site.curriculum == "dc-genomics" or site.curriculum == "dc-socsci" or site.curriculum == "dc-geospatial" %}
 <div class="alert alert-warning">
-In this workshop, basics of prgramming in python will be thought with the aim of analysis of clinical data. In this workshop, we will use Jupyter notebook. You can find prequistics for installation in <a href="https://jupyter.org/">here</a>. 
+In this workshop, basics of prgramming in python will be thought with the aim of analysis of clinical data. In this workshop, we will use Jupyter notebook. You can find prequistics for installation in <a href="https://jupyter.org/">here</a>.
 </div>
 {% endunless %}
 {% endif %}
+
+{% comment %}
+Check SWC curriculum
+{% endcomment %}
+
+{% if site.carpentry == "swc" %}
+{% unless site.curriculum == "swc-inflammation" or site.curriculum == "swc-gapminder" %}
+<div class="alert alert-warning">
+It looks like you are setting up a website for a Software Carpentry curriculum but you haven't specified the curriculum type in the <code>_config.yml</code> file (current value in <code>_config.yml</code>: "<strong>{{ site.curriculum }}</strong>", possible values: <code>swc-inflammation</code>, or <code>swc-gapminder</code>). After editing this file, you need to run <code>make serve</code> again to see the changes reflected.
+</div>
+{% endunless %}
+{% endif %}
+
 
 {% comment %}
 EVENTBRITE
